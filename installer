@@ -50,3 +50,4 @@ cp xresources ~/.Xresources
 cp switcher.py ~/switcher.py
 cp i3statusconf ~/.i3status.conf
 cp i3statussh ~/.i3status.sh
+cp bash_aliases	~/.bash_aliases
