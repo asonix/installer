@@ -1,0 +1,52 @@
+#!/bin/bash
+
+sudo apt-add-repository -y ppa:versable/elementary-update
+sudo apt-add-repository -y ppa:vincent-c/ppa
+
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -f -y install
+sudo apt-get -y upgrade
+
+sudo apt-get install -y libqtgui
+sudo apt-get -f -y install
+sudo apt-get install -y libqtgui
+
+sudo dpkg -i skype-ubuntu-precise_4.2.0.13-1_i386.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo dpkg -i dropbox_1.6.0_amd64.deb
+sudo dpkg -i google-musicmanager-beta_current_amd64.deb
+
+sudo apt-get install -y i3
+sudo apt-get install -y git
+sudo apt-get install -y vim-gtk
+
+sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble feh gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted
+
+wget http://git.silverirc.com/cgit.cgi/screenfetch.git/plain/screenfetch-dev
+sudo chmod +x screenfetch-dev
+
+#Configure Git
+git config --global user.name "Asonix"
+git config --global user.email "asonix.dev@gmail.com"
+
+#Install patched i3 and depends
+git clone https://github.com/DSMan195276/i3.git
+git checkout dsm-changes
+sudo apt-get install -y libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev xcompmgr xterm rxvt-unicode xfonts-terminus i3bar i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev 
+cd i3
+make
+sudo make install
+cd ..
+
+mkdir ~/.i3
+mkdir ~/.mpd
+mkdir ~/.ncmpcpp
+
+cp i3config ~/.i3/config
+cp mpdconf ~/.mpd/mpd.conf
+cp ncmpcppconfig ~/.ncmpcpp/config
+cp xresources ~/.Xresources
+cp switcher.py ~/switcher.py
+cp i3statusconf ~/.i3status.conf
+cp i3statussh ~/.i3status.sh

@@ -1,0 +1,57 @@
+XTerm*locale: true
+*saveLines: 4096
+*foreground: #dedede
+XTerm*background: #2d2d2d
+
+*cursorColor: #dedede
+*pointerColor: #2d2d2d
+*pointerColorBackground: #dedede
+
+*internalBorder: 10
+
+!black
+*color0: #2d2d2d
+*color8: #aaaaaa
+
+!red
+*color1: #cc9797
+*color9: #d64937
+
+!green
+*color2:  #97cc9c
+*color10: #a2dae9
+
+!brown/yellow
+*color3:  #999999
+*coror11: #dedede
+
+!blue
+*color4:  #97b2cc
+*color12: #a2c1de
+
+!magenta
+*color5:  #a897cc
+*color13: #b6a2de
+
+!cyan
+*color6:  #adbdcc
+*color14: #bfcfde
+
+!white
+*color7:  #cccccc
+*color15: #c7c7c7
+
+!extra
+*colorUL: #aaaaaa
+*colorBD: #f9f9f9
+
+XTerm*borderWidth: 0
+*boldMode: false
+
+URxvt*depth: 32
+URxvt*background: [60]#000000
+
+URxvt*font: xft:terminus
+URxvt*urlLauncher: google-chrome
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
