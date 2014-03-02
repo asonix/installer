@@ -53,6 +53,9 @@ cp switcher.py ~/switcher.py
 cp i3statusconf ~/.i3status.conf
 cp i3statussh ~/.i3status.sh
 cp bash_aliases	~/.bash_aliases
+cp vimrc ~/.vimrc
+cp tmuxconf ~/.tmux.conf
+
 
 sudo apt-get install burg burg-themes super-boot-manager
 sudo burg-install "(hd0)"
