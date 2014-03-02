@@ -2,6 +2,8 @@
 
 sudo apt-add-repository -y ppa:versable/elementary-update
 sudo apt-add-repository -y ppa:vincent-c/ppa
+sudo apt-add-repository -y ppa:ingalex/super-boot-manager
+sudo apt-add-repository -y ppa:n-muench/burg
 
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -21,7 +23,7 @@ sudo apt-get install -y i3
 sudo apt-get install -y git
 sudo apt-get install -y vim-gtk
 
-sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble feh gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs
+sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble feh gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc
 
 wget http://git.silverirc.com/cgit.cgi/screenfetch.git/plain/screenfetch-dev
 sudo chmod +x screenfetch-dev
@@ -33,7 +35,7 @@ git config --global user.email "asonix.dev@gmail.com"
 #Install patched i3 and depends
 git clone https://github.com/DSMan195276/i3.git
 git checkout dsm-changes
-sudo apt-get install -y libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev xcompmgr xterm rxvt-unicode xfonts-terminus i3bar i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev 
+sudo apt-get install -y libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev xcompmgr xterm rxvt-unicode xfonts-terminus i3bar i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev
 cd i3
 make
 sudo make install
@@ -51,3 +53,15 @@ cp switcher.py ~/switcher.py
 cp i3statusconf ~/.i3status.conf
 cp i3statussh ~/.i3status.sh
 cp bash_aliases	~/.bash_aliases
+
+sudo apt-get install burg burg-themes super-boot-manager
+sudo burg-install "(hd0)"
+wget http://www.deviantart.com/download/187228213/el_castillo_burg_theme_by_bigrza-d33gy7p.zip?token=9ce33c978f7983f8b54d34fd0867e80abae9713d&ts=1393723777
+mkdir burg
+unzip el_castillo_burg_theme_by_bigrza-d33gy7p.zip -d burg
+sudo cp -r burg/El_Castillo /boot/burg/themes/
+sudo cp white_elementary.png /boot/burg/themes/white/
+sudo update burg
+sudo burg-emu -D
+echo "press t"
+
