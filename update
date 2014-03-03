@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cp .i3/config Downloads/elementaryinstaller/i3config
+cp .mpd/mpd.conf Downloads/elementaryinstaller/mpdconf
+cp .ncmpcpp/config Downloads/elementaryinstaller/ncmpcppconfig
+cp .Xresources Downloads/elementaryinstaller/Xresources
+cp switcher.py Downloads/elementaryinstaller/switcher.py
+cp .i3status.conf Downloads/elementaryinstaller/i3statusconf
+cp .i3status.sh Downloads/elementaryinstaller/i3statussh
+cp .bash_aliases Downloads/elementaryinstaller/bash_aliases
+cp .vimrc Downloads/elementaryinstaller/vimrc
+cp .tmux.conf Downloads/elementaryinstaller/tmuxconf
+cp .gntrc Downloads/elementaryinstaller/gntrc
+cp .update Downloads/elementaryinstaller/update
+
+cd Downloads/elementaryinstaller/
+git commit -a -m "updating configs"
+git push origin master
