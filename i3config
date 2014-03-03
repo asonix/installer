@@ -3,7 +3,7 @@
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
-#font pango:
+font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -160,14 +160,14 @@ bindsym $mod+Shift+E exit
 
 # resize windows
 mode "resize" {
-    bindsym Shift+H resize shrink width  10px or 10 ppt
-    bindsym Shift+J resize shrink height 10px or 10 ppt
-    bindsym Shift+K resize grow   height 10px or 10 ppt
-    bindsym Shift+L resize grow   width  10px or 10 ppt
-    bindsym Shift+Left resize shrink width  10px or 10 ppt
-    bindsym Shift+Down resize shrink height 10px or 10 ppt
-    bindsym Shift+Up resize grow   height 10px or 10 ppt
-    bindsym Shift+Right resize grow   width  10px or 10 ppt
+    bindsym Shift+H resize shrink width  1px or 1 ppt
+    bindsym Shift+J resize shrink height 1px or 1 ppt
+    bindsym Shift+K resize grow   height 1px or 1 ppt
+    bindsym Shift+L resize grow   width  1px or 1 ppt
+    bindsym Shift+Left resize shrink width  1px or 10 ppt
+    bindsym Shift+Down resize shrink height 1px or 10 ppt
+    bindsym Shift+Up resize grow   height 1px or 1 ppt
+    bindsym Shift+Right resize grow   width  1px or 1 ppt
 
     # exit resize mode
     bindsym Escape mode "default"

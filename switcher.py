@@ -21,7 +21,7 @@ class ColorsObj(object):
 	
 	#Indecies of colors[] for xterm
         xtermLight = [0, 1, 0, 2, 0, 3, 0, 4, 5, 19, 7, 8, 8, 9, 10, 11, 12, 20, 14, 15, 20, 2, 3, 1]
-        xtermDark = [1, 0, 1, 0, 1, 0, 3, 5, 4, 7, 6, 18, 1, 10, 9, 12, 11, 14, 13, 16, 15, 3, 2, 22]
+        xtermDark = [1, 0, 1, 0, 1, 0, 3, 5, 4, 7, 6, 18, 1, 10, 9, 12, 11, 14, 13, 16, 15, 3, 2, 0]
 	xtermMatrix = [23, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 22]
 	xtermHacker = [24, 22, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 22]
 	
@@ -60,7 +60,7 @@ class ColorsObj(object):
 	    for i in xrange(len(xtermHacker)):
 		self.xscheme.append(colors[xtermHacker[i]])
 	else:
-            self.xtermtrans = "60"
+            self.xtermtrans = "100"
 	    self.bg = i3Darkbg
             for i in xrange(len(i3Dark)):
                 self.ischeme.append(colors[i3Dark[i]])
