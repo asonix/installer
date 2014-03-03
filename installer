@@ -70,6 +70,7 @@ cp bash_aliases	~/.bash_aliases
 cp vimrc ~/.vimrc
 cp tmuxconf ~/.tmux.conf
 cp gntrc ~/.gntrc
+cp update ~/.update
 
 sudo apt-get install burg burg-themes super-boot-manager
 sudo burg-install "(hd0)"
