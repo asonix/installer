@@ -111,8 +111,8 @@ for j in xrange(len(xterm)):
 
 #change background path in reread.sh
 for k in xrange(len(reread)):
-	if reread[k].find("--bg-fill") != -1:
-		reread[k] = "feh --bg-fill " + colorscheme.bg + '\n'
+	if reread[k].find("picture-uri") != -1:
+		reread[k] = "gsettings set org.gnome.desktop.background picture-uri \"file:///" + colorscheme.bg + '\"\n'
 
 #close opened files
 foreread.close()
