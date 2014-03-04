@@ -243,7 +243,7 @@ visualizer_type = "wave" (spectrum/wave)
 #
 #playlist_shorten_total_times = "no"
 #
-#playlist_separate_albums = "no"
+playlist_separate_albums = "yes"
 #
 #playlist_display_mode = "classic" (classic/columns)
 #
@@ -289,7 +289,7 @@ visualizer_type = "wave" (spectrum/wave)
 #
 #header_text_scrolling = "yes"
 #
-#fancy_scrolling = "yes"
+fancy_scrolling = "yes"
 #
 #cyclic_scrolling = "no"
 #
@@ -343,7 +343,7 @@ visualizer_type = "wave" (spectrum/wave)
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen number from the list above.
 ##
-#startup_screen = "2"
+startup_screen = "2"
 #
 #jump_to_now_playing_song_at_start = "yes"
 #
@@ -414,7 +414,7 @@ visualizer_type = "wave" (spectrum/wave)
 #
 ##### colors definitions #####
 #
-#colors_enabled = "yes"
+colors_enabled = "yes"
 #
 #empty_tag_color = "cyan"
 #

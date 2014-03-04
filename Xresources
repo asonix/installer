@@ -18,24 +18,24 @@ XTerm*background: #2d2d2d
 *color9: #d64937
 
 !green
-*color2:  #97cc9c
-*color10: #a2dae9
+*color2:  #4c884e
+*color10: #61838c
 
 !brown/yellow
 *color3:  #999999
 *coror11: #dedede
 
 !blue
-*color4:  #97b2cc
-*color12: #a2c1de
+*color4:  #4488aa
+*color12: #92d1fe
 
 !magenta
 *color5:  #a897cc
 *color13: #b6a2de
 
 !cyan
-*color6:  #adbdcc
-*color14: #bfcfde
+*color6:  #9cabdd
+*color14: #a0b0de
 
 !white
 *color7:  #cccccc
@@ -49,7 +49,7 @@ XTerm*borderWidth: 0
 *boldMode: false
 
 URxvt*depth: 32
-URxvt*background: [100]#2d2d2d
+URxvt*background: [97]#2d2d2d
 
 URxvt*font: xft:terminus:size=8
 URxvt*urlLauncher: google-chrome

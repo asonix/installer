@@ -39,11 +39,21 @@ sudo chmod +x screenfetch-dev
 git config --global user.name "Asonix"
 git config --global user.email "asonix.dev@gmail.com"
 
+#Install fun terminal things
+git clone https://github.com/livibetter/pipes.sh.git
+cd pipes.sh
+sudo make install
+cd ..
+git clone https://github.com/livibetter/pipesX.sh.git
+cd pipesX.sh
+sudo make install
+cd ..
+
 #Install patched i3 and depends
 git clone https://github.com/DSMan195276/i3.git
+cd i3
 git checkout dsm-changes
 sudo apt-get install -y libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev xcompmgr xterm rxvt-unicode rxvt-unicode-256color xfonts-terminus i3bar i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev
-cd i3
 make
 sudo make install
 cd ..

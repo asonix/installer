@@ -6,9 +6,9 @@ class ColorsObj(object):
     def __init__(self, choose):
 	#creates list of colors to choose from
         colors = ["#2d2d2d", "#dedede", "#f9f9f9", "#aaaaaa",
-                  "#d64937", "#cc9797", "#a2dae9", "#97cc9c",
-                  "#777777", "#a2c1de", "#97b2cc", "#b6a2de",
-                  "#a897cc", "#bfcfde", "#adbdcc", "#c7c7c7",
+                  "#d64937", "#cc9797", "#61838c", "#4c884e",
+                  "#777777", "#92d1fe", "#4488aa", "#b6a2de",
+                  "#a897cc", "#a0b0de", "#9cabdd", "#c7c7c7",
                   "#cccccc", "#333333", "#999999", "#8ebfcc",
 		  "#929eb0", "#a6a6a6", "#000000", "#00ff00",
 		  "#ff0000", "#444444"]
@@ -60,7 +60,7 @@ class ColorsObj(object):
 	    for i in xrange(len(xtermHacker)):
 		self.xscheme.append(colors[xtermHacker[i]])
 	else:
-            self.xtermtrans = "100"
+            self.xtermtrans = "97"
 	    self.bg = i3Darkbg
             for i in xrange(len(i3Dark)):
                 self.ischeme.append(colors[i3Dark[i]])
