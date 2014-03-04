@@ -27,7 +27,7 @@ class ColorsObj(object):
 	
 	#location of background images
 	i3Lightbg = "/usr/share/backgrounds/16.jpg"	
-	i3Darkbg = "/usr/share/backgrounds/direction.png"
+	i3Darkbg = "/usr/share/backgrounds/direction.jpg"
 	i3Matrixbg = "~/Pictures/black.png"
 
 	#creation of variable for transparency
