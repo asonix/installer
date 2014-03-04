@@ -14,24 +14,24 @@ XTerm*background: #2d2d2d
 *color8: #aaaaaa
 
 !red
-*color1: #cc9797
-*color9: #d64937
+*color1: #cf7c73
+*color9: #c6301c
 
 !green
 *color2:  #4c884e
-*color10: #61838c
+*color10: #d64937
 
 !brown/yellow
 *color3:  #999999
-*coror11: #dedede
+*coror11: #aaaaaa
 
 !blue
-*color4:  #4488aa
-*color12: #92d1fe
+*color4:  #ddeeff
+*color12: #e5a29f
 
 !magenta
 *color5:  #a897cc
-*color13: #b6a2de
+*color13: #b57cdd
 
 !cyan
 *color6:  #9cabdd
