@@ -3,8 +3,10 @@ XTerm*locale: true
 *foreground: #dedede
 XTerm*background: #2d2d2d
 
+!*fading: 0
+
 *cursorColor: #dedede
-*pointerColor: #2d2d2d
+*pointerColorForeground: #2d2d2d
 *pointerColorBackground: #dedede
 
 *internalBorder: 10
@@ -23,7 +25,7 @@ XTerm*background: #2d2d2d
 
 !brown/yellow
 *color3:  #999999
-*coror11: #aaaaaa
+*color11: #aaaaaa
 
 !blue
 *color4:  #ddeeff
