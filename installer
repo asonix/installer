@@ -30,7 +30,7 @@ sudo apt-get install -y i3
 sudo apt-get install -y git
 sudo apt-get install -y vim-gtk
 
-sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble feh gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype
+sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype
 
 wget http://git.silverirc.com/cgit.cgi/screenfetch.git/plain/screenfetch-dev
 sudo chmod +x screenfetch-dev
