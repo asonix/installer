@@ -1,57 +1,57 @@
 XTerm*locale: true
 *saveLines: 4096
-*foreground: #dedede
-XTerm*background: #2d2d2d
+*foreground: #2d2d2d
+XTerm*background: #dedede
 
 !*fading: 0
 
-*cursorColor: #dedede
-*pointerColorForeground: #2d2d2d
-*pointerColorBackground: #dedede
+*cursorColor: #2d2d2d
+*pointerColorForeground: #f9f9f9
+*pointerColorBackground: #2d2d2d
 
 *internalBorder: 10
 
 !black
-*color0: #2d2d2d
-*color8: #aaaaaa
+*color0: #cccccc
+*color8: #2d2d2d
 
 !red
-*color1: #cf7c73
-*color9: #c6301c
+*color1: #d64937
+*color9: #cf7c73
 
 !green
-*color2:  #4c884e
-*color10: #d64937
+*color2:  #577382
+*color10: #4c884e
 
 !brown/yellow
-*color3:  #999999
-*color11: #aaaaaa
+*color3:  #777777
+*color11: #777777
 
 !blue
-*color4:  #98cbfe
-*color12: #e5a29f
+*color4:  #e5a29f
+*color12: #24507c
 
 !magenta
-*color5:  #a897cc
-*color13: #b57cdd
+*color5:  #b57cdd
+*color13: #a897cc
 
 !cyan
-*color6:  #9cabdd
-*color14: #a0b0de
+*color6:  #929eb0
+*color14: #9cabdd
 
 !white
-*color7:  #cccccc
-*color15: #c7c7c7
+*color7:  #c7c7c7
+*color15: #929eb0
 
 !extra
-*colorUL: #aaaaaa
-*colorBD: #f9f9f9
+*colorUL: #f9f9f9
+*colorBD: #aaaaaa
 
 XTerm*borderWidth: 0
 *boldMode: false
 
 URxvt*depth: 32
-URxvt*background: [97]#2d2d2d
+URxvt*background: [97]#dedede
 
 URxvt*font: xft:terminus:size=8
 URxvt*urlLauncher: google-chrome
