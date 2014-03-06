@@ -7,7 +7,7 @@ class ColorsObj(object):
 	#creates list of colors to choose from
         colors = ["#2d2d2d", "#dedede", "#f9f9f9", "#aaaaaa",
                   "#d64937", "#cf7c73", "#c6301c", "#4c884e",
-                  "#777777", "#e5a29f", "#98cbfe", "#b57cdd",
+                  "#777777", "#e5a29f", "#78b5fe", "#b57cdd",
                   "#a897cc", "#a0b0de", "#9cabdd", "#c7c7c7",
                   "#cccccc", "#333333", "#999999", "#577382",
 		  "#929eb0", "#a6a6a6", "#000000", "#00ff00",
@@ -20,8 +20,9 @@ class ColorsObj(object):
 	i3Hacker = [24, 24, 22, 24, 24, 24, 22, 24, 24, 24, 22, 24, 24, 24, 22, 24, 22, 24, 22, 24, 22, 24, 24, 22, 24, 24, 22, 24, 24, 22, 24]
 	
 	#Indecies of colors[] for xterm
-        xtermLight = [0, 1, 0, 2, 0, 16, 0, 4, 5, 19, 7, 8, 8, 9, 26, 11, 12, 20, 14, 15, 20, 2, 3, 1]
-        xtermDark = [1, 0, 1, 0, 1, 0, 3, 5, 6, 7, 4, 18, 3, 10, 9, 12, 11, 14, 13, 16, 15, 3, 2, 0]
+        #xtermLight = [0, 1, 0, 2, 0, 1, 0, 4, 5, 19, 7, 8, 8, 9, 26, 11, 12, 20, 14, 15, 20, 2, 3, 1]
+	xtermLight = [0, 1, 0, 1, 0, 1, 3, 5, 6, 7, 4, 18, 3, 10, 9, 12, 11, 14, 13, 16, 15, 3, 0, 1]
+	xtermDark = [1, 0, 1, 0, 1, 0, 3, 5, 6, 7, 4, 18, 3, 10, 9, 12, 11, 14, 13, 16, 15, 3, 2, 0]
 	xtermMatrix = [23, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 22]
 	xtermHacker = [24, 22, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 22]
 	
@@ -37,9 +38,10 @@ class ColorsObj(object):
 	self.bg = ""
         self.ischeme = []
         self.xscheme = []
-        #based on input, choose what color schemes to assign ischeme, xscheme and bg
+        
+	#based on input, choose what color schemes to assign ischeme, xscheme and bg
         if choose[0:1].find('l') != -1 or choose[0:1].find('L') != -1:
-            self.xtermtrans = "97"
+            self.xtermtrans = "100"
 	    self.bg = i3Lightbg
             for i in xrange(len(i3Light)):
                 self.ischeme.append(colors[i3Light[i]])
