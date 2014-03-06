@@ -16,5 +16,5 @@ set backspace=indent,eol,start
 
 set mouse=a
 
-highlight LineNr ctermfg=red ctermbg=black
-highlight Statement term=bold ctermfg=yellow
+highlight LineNr ctermfg=10 ctermbg=0
+highlight Statement term=bold ctermfg=10

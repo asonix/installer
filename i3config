@@ -197,8 +197,8 @@ bar {
             separator  #2d2d2d
 	    
 	    # class		border	bckgrnd	text
-            focused_workspace    #d64937 #d64937 #dedede
-            active_workspace     #2d2d2d #2d2d2d #d64937
+            focused_workspace    #2d2d2d #2d2d2d #d64937
+            active_workspace     #d64937 #2d2d2d #d64937
             inactive_workspace   #2d2d2d #2d2d2d #dedede
             urgent_workspace     #d64937 #2d2d2d #dedede
         }
