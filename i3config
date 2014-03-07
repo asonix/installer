@@ -207,7 +207,7 @@ exec --no-startup-id ~/./alternating_layouts.py
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-sound-applet
 exec --no-startup-id mpd
-exec --no-startup-id xcompmgr
+exec --no-startup-id compton
 exec --no-startup-id google-chrome
 exec --no-startup-id ~/./reread.sh
 exec --no-startup-id mpdscribble

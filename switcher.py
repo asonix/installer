@@ -26,8 +26,8 @@ class ColorsObj(object):
 	xtermHacker = [24, 22, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 22]
 	
 	#location of background images
-	i3Lightbg = "/usr/share/backgrounds/direction.jpg"	
-	i3Darkbg = "/usr/share/backgrounds/direction.jpg"
+	i3Lightbg = "/usr/share/backgrounds/164.jpg"	
+	i3Darkbg = "/usr/share/backgrounds/164.jpg"
 	i3Matrixbg = "~/Pictures/black.png"
 
 	#creation of variable for transparency
