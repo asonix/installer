@@ -1,144 +1,132 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+from subprocess import call
 
-import subprocess
+def determine_hex(value):
+    allowed = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+    value = value[1:]
+    for i in value:
+        if i not in allowed:
+            return(False)
+    return(True)
+
+def find_and_replace_hex(document,values,iterator):
+    for i in range(len(document)):
+        if document[i].find('#') != -1:
+            if determine_hex(document[i][document[i].find('#'):document[i].find('#')+7]):
+                index = document[i].find('#')
+                begin = document[i][:index]
+                rec_doc = [document[i][index+7:]]
+                temp = begin + values[iterator]
+                print(document[i])
+                result = find_and_replace_hex(rec_doc,values,iterator+1)
+                print(document[i])
+                document[i] = temp + str(result[0][0])
+                iterator = result[1]
+    return([document,iterator])
 
 class ColorsObj(object):
-    def __init__(self, choose):
-	#creates list of colors to choose from
-        colors = ["#2d2d2d", "#dedede", "#f9f9f9", "#aaaaaa",
-                  "#d64937", "#cf7c73", "#c6301c", "#4c884e",
-                  "#777777", "#e5a29f", "#78b5fe", "#b57cdd",
-                  "#a897cc", "#a0b0de", "#9cabdd", "#c7c7c7",
-                  "#cccccc", "#333333", "#999999", "#577382",
-		  "#929eb0", "#a6a6a6", "#000000", "#00ff00",
-		  "#ff0000", "#444444", "#24507c"]
-	
-	#Indecies of colors[] for i3
-        i3Light = [4, 4, 0, 4, 1, 2, 0, 1, 1, 2, 0, 1, 4, 1, 2, 1, 1, 0, 1, 4, 4, 1, 4, 1, 4, 1, 1, 17, 4, 1, 17]
-        i3Dark = [4, 4, 1, 4, 0, 25, 1, 0, 0, 25, 1, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 4, 4, 0, 4, 0, 0, 1, 4, 0, 1]
-	i3Matrix = [23, 23, 22, 23, 23, 23, 22, 23, 23, 23, 22, 23, 23, 23, 22, 23, 22, 23, 22, 23, 22, 23, 23, 22, 23, 23, 22, 23, 23, 22, 23]
-	i3Hacker = [24, 24, 22, 24, 24, 24, 22, 24, 24, 24, 22, 24, 24, 24, 22, 24, 22, 24, 22, 24, 22, 24, 24, 22, 24, 24, 22, 24, 24, 22, 24]
-	
-	#Indecies of colors[] for xterm
-	xtermLight = [0, 1, 0, 1, 0, 1, 3, 5, 6, 7, 4, 18, 3, 10, 9, 12, 11, 14, 13, 16, 15, 3, 0, 1]
-	xtermDark = [1, 0, 1, 0, 1, 0, 3, 5, 6, 7, 4, 18, 3, 10, 9, 12, 11, 14, 13, 16, 15, 3, 2, 0]
-	xtermMatrix = [23, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 22]
-	xtermHacker = [24, 22, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 22]
-	
-	#location of background images
-	i3Lightbg = "/usr/share/backgrounds/164.jpg"	
-	i3Darkbg = "/usr/share/backgrounds/164.jpg"
-	i3Matrixbg = "~/Pictures/black.png"
-
-	#creation of variable for transparency
-	self.xtermtrans = ""
-	
-	#creates variables to hold stored data based on input        
-	self.bg = ""
+    def __init__(self,choose):
+        #creates list of colors to choose from
+        colors = ["#2d2d2d","#dedede","#f9f9f9","#aaaaaa",
+                  "#d64937","#cf7c73","#c6301c","#4c884e",
+                  "#777777","#e5a29f","#78b5fe","#b57cdd",
+                  "#a897cc","#a0b0de","#9cabdd","#c7c7c7",
+                  "#cccccc","#333333","#999999","#577382",
+                  "#929eb0","#a6a6a6","#000000","#00ff00",
+                  "#ff0000","#444444","#24507c"]
+        
+        i3Light = [4,4,0,4,1,2,0,1,1,2,0,1,4,1,2,1,1,0,1,4,4,1,4,1,4,1,1,17,4,1,17]
+        i3Dark = [4,4,1,4,0,25,1,0,0,25,1,0,4,0,0,0,0,1,0,0,0,4,0,0,4,0,0,1,4,0,1]
+        i3Matrix = [23,23,22,23,23,23,22,23,23,23,22,23,23,23,22,23,22,23,22,23,22,23,23,22,23,23,22,23,23,22,23]
+        i3Hacker = [24,24,22,24,24,24,22,24,24,24,22,24,24,24,22,24,22,24,22,24,22,24,24,22,24,24,22,24,24,22,24]
+        
+        termLight = [0,1,0,1,0,1,3,5,6,7,4,18,3,10,9,12,11,14,13,16,15,3,0,1]
+        termDark = [1,0,1,0,1,0,3,5,6,7,4,18,3,10,9,12,11,14,13,16,15,3,2,0]
+        termMatrix = [23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22]
+        termHacker = [24,22,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,22]
+        
+        lightbg = "/usr/share/backgrounds/164.jpg"
+        darkbg = "/home/riley/Pictures/sunandmountain.jpg"
+        matrixbg = "Pictures/black.png"
+        
+        self.trans = ""
+        
+        self.bg = ""
         self.ischeme = []
-        self.xscheme = []
+        self.tscheme = []
+        self.tempi = []
+        self.tempt = []
         
-	#based on input, choose what color schemes to assign ischeme, xscheme and bg
-        if choose[0:1].find('l') != -1 or choose[0:1].find('L') != -1:
-            self.xtermtrans = "100"
-	    self.bg = i3Lightbg
-            for i in xrange(len(i3Light)):
-                self.ischeme.append(colors[i3Light[i]])
-            for i in xrange(len(xtermLight)):
-                self.xscheme.append(colors[xtermLight[i]])
-        elif choose[0:1].find('m') != -1 or choose[0:1].find('M') != -1:
-	    self.xtermtrans = "100"
-	    self.bg = i3Matrixbg
-	    for i in xrange(len(i3Matrix)):
-		self.ischeme.append(colors[i3Matrix[i]])
-	    for i in xrange(len(xtermMatrix)):
-		self.xscheme.append(colors[xtermMatrix[i]])
-	elif choose[0:1].find('h') != -1 or choose[0:1].find('H') != -1:
-	    self.xtermtrans = "100"
-	    self.bg = i3Matrixbg
-	    for i in xrange(len(i3Hacker)):
-		self.ischeme.append(colors[i3Hacker[i]])
-	    for i in xrange(len(xtermHacker)):
-		self.xscheme.append(colors[xtermHacker[i]])
-	else:
-            self.xtermtrans = "97"
-	    self.bg = i3Darkbg
-            for i in xrange(len(i3Dark)):
-                self.ischeme.append(colors[i3Dark[i]])
-            for i in xrange(len(xtermLight)):
-                self.xscheme.append(colors[xtermDark[i]])
+        if choose[0].lower() == 'l':
+            self.trans = "100"
+            self.bg = lightbg
+            self.tempi = i3Light
+            self.tempt = termLight
+        elif choose[0].lower() == 'm':
+            self.trans = "100"
+            self.bg = matrixbg
+            self.tempi = i3Matrix
+            self.tempt = termMatrix
+        elif choose[0].lower() == 'h':
+            self.trans = "100"
+            self.bg = matrixbg
+            self.tempi = i3Hacker
+            self.tempt = termHacker
+        elif choose[0].lower() == 'd':
+            self.trans = "100"
+            self.bg = darkbg
+            self.tempi = i3Dark
+            self.tempt = termDark
         
-#open files
-foi3 = open(".i3/config", "r")
-foxterm = open(".Xresources", "r")
-foreread = open("reread.sh", "r")
+        for i in range(len(self.tempi)):
+            self.ischeme.append(colors[self.tempi[i]])
+        for i in range(len(self.tempt)):
+            self.tscheme.append(colors[self.tempt[i]])
 
-#create lists based on read files
-i3 = foi3.readlines()
-xterm = foxterm.readlines()
-reread = foreread.readlines()
+decide = input('What theme would you like to use?\n\nOptions:\n>Light Numix\n>Dark Numix\n>Hacker\n>Matrix\n\n')
 
-#decide is ther variable that input is stored in
-decide = raw_input("Light/Dark: ")
+fi3 = open('.i3/config','r')
+fterm = open('.Xresources','r')
+freread = open('.reread.sh','r')
 
-#create new ColorsObj object called colorscheme
-colorscheme = ColorsObj(decide)
+i3 = fi3.readlines()
+term = fterm.readlines()
+reread = freread.readlines()
 
-#change colors in specific lines based on colorscheme.ischeme (i3 scheme)
-for i in xrange(len(i3)):
-    if i3[i].find("client.focused_inactive") != -1:
-        i3[i-1] = "client.focused          {:s} {:s} {:s} {:s}\n".format(colorscheme.ischeme[0], colorscheme.ischeme[1], colorscheme.ischeme[2], colorscheme.ischeme[3])
-        i3[i] = "client.focused_inactive {:s} {:s} {:s} {:s}\n".format(colorscheme.ischeme[4], colorscheme.ischeme[5], colorscheme.ischeme[6], colorscheme.ischeme[7])
-        i3[i+1] = "client.unfocused        {:s} {:s} {:s} {:s}\n".format(colorscheme.ischeme[8], colorscheme.ischeme[9], colorscheme.ischeme[10], colorscheme.ischeme[11])
-        i3[i+2] = "client.urgent           {:s} {:s} {:s} {:s}\n".format(colorscheme.ischeme[12], colorscheme.ischeme[13], colorscheme.ischeme[14], colorscheme.ischeme[15])
-    elif i3[i].find("background #") != -1:
-        i3[i] = "            background {:s}\n".format(colorscheme.ischeme[16])
-        i3[i+1] = "            statusline {:s}\n".format(colorscheme.ischeme[17])
-        i3[i+2] = "            separator  {:s}\n".format(colorscheme.ischeme[18])
-    elif i3[i].find("focused_workspace") != -1:
-        i3[i] = "            focused_workspace    {:s} {:s} {:s}\n".format(colorscheme.ischeme[19], colorscheme.ischeme[20], colorscheme.ischeme[21])
-        i3[i+1] = "            active_workspace     {:s} {:s} {:s}\n".format(colorscheme.ischeme[22], colorscheme.ischeme[23], colorscheme.ischeme[24])
-        i3[i+2] = "            inactive_workspace   {:s} {:s} {:s}\n".format(colorscheme.ischeme[25], colorscheme.ischeme[26], colorscheme.ischeme[27])
-        i3[i+3] = "            urgent_workspace     {:s} {:s} {:s}\n".format(colorscheme.ischeme[28], colorscheme.ischeme[29], colorscheme.ischeme[30])
-x = 0
+fi3.close()
+fterm.close()
+freread.close()
 
-#change colors in every line containing the character '#' (octothorpe, pound, hashtag, whatever)
-for j in xrange(len(xterm)):
-        if xterm[j].find(' #') != -1:
-                xterm[j] = xterm[j][:xterm[j].find('#')] + colorscheme.xscheme[x] + '\n'
-                x += 1
-        elif xterm[j].find(']#') != -1:
-                xterm[j] = xterm[j][:xterm[j].find('[')] + '[' + colorscheme.xtermtrans + ']' + colorscheme.xscheme[x] + '\n'
+colors = ColorsObj(decide)
 
-#change background path in reread.sh
-for k in xrange(len(reread)):
-	if reread[k].find("picture-uri") != -1:
-		reread[k] = "gsettings set org.gnome.desktop.background picture-uri \"file:///" + colorscheme.bg + '\"\n'
+i3 = find_and_replace_hex(i3,colors.ischeme,0)[0]
 
-#close opened files
-foreread.close()
-foi3.close()
-foxterm.close()
+term = find_and_replace_hex(term,colors.tscheme,0)[0]
 
-#open all files again for writing
-foreread = open("reread.sh", "wb")
-foi3 = open(".i3/config", "wb")
-foxterm = open(".Xresources", "wb")
+for i in range(len(term)):
+    if term[i].find(']#') != -1:
+        term[i] = term[i][:term[i].find('[')]+'['+colors.trans+term[i][term[i].find(']'):]
 
-#remove current text in all files
-foi3.truncate()
-foxterm.truncate()
-foreread.truncate()
+for j in range(len(reread)):
+    print(reread[j])
+    if reread[j].find('gsettings') != -1:
+        print('gsettings found')
+        reread[j] = 'gsettings set org.gnome.desktop.background picture-uri "file:///'+colors.bg+'"\n'
 
-#write new text with changed colors and paths to files
-foi3.writelines(i3);
-foxterm.writelines(xterm);
-foreread.writelines(reread);
+fi3 = open('.i3/config','w')
+fterm = open('.Xresources','w')
+freread = open('.reread.sh','w')
 
-#close files again
-foi3.close()
-foxterm.close()
-foreread.close()
+fi3.truncate()
+fterm.truncate()
+freread.truncate()
 
-#call on reread.sh to refresh X and i3 settings
-subprocess.call("~/reread.sh", shell=True)
+fi3.writelines(i3)
+fterm.writelines(term)
+freread.writelines(reread)
+
+fi3.close()
+fterm.close()
+freread.close()
+
+call('./.reread.sh',shell=True)

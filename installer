@@ -95,3 +95,5 @@ sudo update burg
 sudo burg-emu -D
 echo "press t"
 apt-file udpate
+
+exec ./canopy-1.3.0-rh5-64.sh

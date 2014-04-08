@@ -51,9 +51,9 @@ XTerm*borderWidth: 0
 *boldMode: false
 
 URxvt*depth: 32
-URxvt*background: [97]#2d2d2d
+URxvt*background: [100]#2d2d2d
 
-URxvt*font: xft:terminus:size=8
+URxvt*font: xft:Terminus:size=8
 URxvt*urlLauncher: google-chrome
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
