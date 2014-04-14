@@ -95,7 +95,7 @@ client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window pixels
 new_window pixel 2
-new_window inset 25
+new_window inset 20
 new_float  pixel 2
 
 # border
@@ -165,10 +165,10 @@ assign [class="Chromium-browser"] WWW
 assign [class="Komodo edit"] DEV
 assign [class="Noise"] REC
 assign [class="Skype"] SKYPE
-assign [Class="Xepher"] DEV
 
 #Always open floating
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Switchboard"] floating enable
 
 # reload, restart, exit
 bindsym $mod+Shift+C reload

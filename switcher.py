@@ -45,9 +45,9 @@ class ColorsObj(object):
         termMatrix = [23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22]
         termHacker = [24,22,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,22]
         
-        lightbg = "/home/riley/Pictures/sunandmountain.jpg"
-        darkbg = "/home/riley/Pictures/sunandmountain.jpg"
-        matrixbg = "Pictures/black.png"
+        lightbg  = "/home/riley/Pictures/furfaggotry/flora.png"
+        darkbg   = "/home/riley/Pictures/furfaggotry/katia_managan.jpg"
+        matrixbg = "/home/riley/Pictures/black.png"
         
         self.trans = ""
         
