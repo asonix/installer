@@ -40,6 +40,7 @@ git config --global user.name "Asonix"
 git config --global user.email "asonix.dev@gmail.com"
 
 #Install fun terminal things
+cd ~/Downloads
 git clone https://github.com/livibetter/pipes.sh.git
 cd pipes.sh
 sudo make install
@@ -50,6 +51,22 @@ sudo make install
 cd ..
 git clone https://gist.github.com/5933594.git
 mv 5933594 rain.sh
+
+#Install non
+sudo apt-get install -y libjpeg-dev jack jack2 liblo-dev libsndfile1-dev ladspa-sdk liblrdf0-dev libsigc++-2.0-dev 
+git clone git://git.tuxfamily.org/gitroot/non/non.git
+sudo chmod -R 777 non
+cd non
+git submodule update --init
+cd lib/ntk
+sudo ./waf configure
+sudo ./waf
+sudo ./waf install
+cd ~/Downloads/non
+sudo ./waf configure
+sudo ./waf
+sudo ./waf install
+cd ..
 
 #Install patched i3 and depends
 git clone https://github.com/DSMan195276/i3.git
