@@ -95,11 +95,11 @@ client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window pixels
 new_window pixel 2
-new_window inset 20
+new_window inset 45
 new_float  pixel 2
 
-# border changing
-bindsym $mod+x border toggle
+# border
+hide_edge_borders none
 
 # scratchpad
 bindsym F1 move scratchpad
@@ -119,6 +119,7 @@ workspace "X" output xinerama-0
 workspace "WWW" output xinerama-0
 workspace "DEV" output xinerama-0
 workspace "REC" output xinerama-0
+workspace "SKYPE" output xinerama-0
 
 # switch to workspace
 bindsym $mod+1 workspace I
@@ -134,6 +135,7 @@ bindsym $mod+0 workspace X
 bindsym $mod+i workspace WWW
 bindsym $mod+o workspace DEV
 bindsym $mod+u workspace REC
+bindsym $mod+s workspace SKYPE
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace I
 bindsym $mod+Shift+at move workspace II
@@ -148,10 +150,12 @@ bindsym $mod+Shift+parenright move workspace X
 bindsym $mod+Shift+I move workspace WWW
 bindsym $mod+Shift+O move workspace DEV
 bindsym $mod+Shift+U move workspace REC
+bindsym $mod+Shift+S move workspace SKYPE
 
 #Assign workspaces to screens
 workspace WWW output LVDS1
 workspace REC output VGA1
+workspace SKYPE output VGA1
 
 #Assign applications to workspaces
 assign [class="Google-chrome"] WWW
@@ -160,8 +164,7 @@ assign [class="Midori"] WWW
 assign [class="Chromium-browser"] WWW
 assign [class="Komodo edit"] DEV
 assign [class="Noise"] REC
-assign [class="URxvt" instance="xterm"] REC
-assign [class="Skype"] I
+assign [class="Skype"] SKYPE
 assign [Class="Xepher"] DEV
 
 #Always open floating
@@ -200,17 +203,17 @@ floating_minimum_size 250 x 50
 bar {
         position top
         status_command ~/./.i3status.sh
-	mode hide
-	hidden_state hide
-	modifier $mod
-	tray_output LVDS1
+	    mode hide
+	    hidden_state hide
+	    modifier $mod
+	    tray_output LVDS1
 	
         colors {
             background #2d2d2d
             statusline #dedede
             separator  #2d2d2d
 	    
-	    # class		border	bckgrnd	text
+	        # class		         border	 bckgrnd text
             focused_workspace    #2d2d2d #2d2d2d #d64937
             active_workspace     #2d2d2d #2d2d2d #d64937
             inactive_workspace   #2d2d2d #2d2d2d #dedede
@@ -221,8 +224,7 @@ exec --no-startup-id ~/./alternating_layouts.py
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-sound-applet
 exec --no-startup-id mpd
-exec-always --no-startup-id pkill compton
-exec-always --no-startup-id compton
+exec --no-startup-id compton
 exec --no-startup-id google-chrome
 exec --no-startup-id ~/./.reread.sh
 exec --no-startup-id mpdscribble
