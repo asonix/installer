@@ -30,7 +30,7 @@ sudo apt-get install -y i3
 sudo apt-get install -y git
 sudo apt-get install -y vim-gtk
 
-sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype
+sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype blender
 
 wget http://git.silverirc.com/cgit.cgi/screenfetch.git/plain/screenfetch-dev
 sudo chmod +x screenfetch-dev
@@ -58,6 +58,7 @@ git checkout dsm-changes
 sudo apt-get install -y libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev compton xterm rxvt-unicode rxvt-unicode-256color xfonts-terminus i3bar i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev
 make
 sudo make install
+sudo apt-get remove i3
 cd ..
 
 mkdir ~/.i3
@@ -83,6 +84,10 @@ cp vimrc ~/.vimrc
 cp tmuxconf ~/.tmux.conf
 cp gntrc ~/.gntrc
 cp update ~/.update
+cp xswitcher.py ~/xswitcher.py
+cp resizeL.py ~/resizeL.py
+cp resizeS.py ~/resizeS.py
+cp compton.conf ~/.config/compton.conf
 
 sudo apt-get install burg burg-themes super-boot-manager
 sudo burg-install "(hd0)"

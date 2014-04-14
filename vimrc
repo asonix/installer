@@ -21,3 +21,11 @@ set mouse=a
 
 highlight LineNr ctermfg=11
 highlight Statement term=bold ctermfg=10
+
+let vala_comment_strings = 1
+let vala_space_errors = 1
+
+execute pathogen#infect()
+
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

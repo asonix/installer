@@ -1,28 +1,22 @@
-#!/usr/bin/env python3
-from os import remove
-from shutil import copyfile
-from subprocess import call
+#!/bin/bash
 
-def switch(dest):
-    remove('.xinitrc')
-    copyfile('.xinitrc'+dest,'.xinitrc')
+cp .i3/config Downloads/elementaryinstaller/i3config
+cp .mpd/mpd.conf Downloads/elementaryinstaller/mpdconf
+cp .ncmpcpp/config Downloads/elementaryinstaller/ncmpcppconfig
+cp .Xresources Downloads/elementaryinstaller/Xresources
+cp switcher.py Downloads/elementaryinstaller/switcher.py
+cp .i3status.conf Downloads/elementaryinstaller/i3statusconf
+cp .i3status.sh Downloads/elementaryinstaller/i3statussh
+cp .bash_aliases Downloads/elementaryinstaller/bash_aliases
+cp .vimrc Downloads/elementaryinstaller/vimrc
+cp .tmux.conf Downloads/elementaryinstaller/tmuxconf
+cp .gntrc Downloads/elementaryinstaller/gntrc
+cp .update Downloads/elementaryinstaller/update
+cp xswitcher.py Downloads/elementaryinstaller/xswitcher.py
+cp resizeL.py Downloads/elementaryinstaller/resizeL.py
+cp resizeS.py Downloads/elementaryinstaller/resizeS.py
+cp .config/compton.conf Downloads/elementaryinstaller/compton.conf
 
-done = False
-while done == False:
-    wm = input("What WM or DE would you like to use?\n\nOptions:\n>BSPWM\n>Gnome\n>Herbstluftwm\n>i3\n>Pantheon\n\n")
-    done = True
-    
-    if wm[0].lower() == 'b':
-        switch('bspwm')
-    elif wm[0].lower() == 'p':
-        switch('pantheon')
-    elif wm[0].lower() == 'i':
-        switch('i3')
-    elif wm[0].lower() == 'g':
-        switch('gnome')
-    elif wm[0].lower() == 'h':
-        switch('herbstluftwm')
-    else:
-        done = False
-call(['pkill','x'])
-call(['startx'])
+cd Downloads/elementaryinstaller/
+git commit -a -m "updating configs"
+git push origin master

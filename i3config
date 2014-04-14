@@ -26,6 +26,9 @@ bindsym $mod+m exec /home/riley/Komodo-Edit-8/lib/mozilla/komodo
 bindsym $mod+y exec switchboard
 bindsym $mod+Mod1+y exec pantheon-files
 bindsym $mod+Mod1+n exec noise
+bindsym $mod+Mod1+u exec ~/./resizeL.py
+bindsym $mod+Mod1+i exec ~/./resizeS.py
+
 
 # ncmpcpp controls
 bindsym $mod+Mod1+h exec ncmpcpp prev
@@ -91,9 +94,9 @@ client.unfocused        #2d2d2d #444444 #dedede #2d2d2d
 client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window pixels
-new_window 1pixel
+new_window pixel 2
 new_window inset 20
-new_float  1pixel
+new_float  pixel 2
 
 # border changing
 bindsym $mod+x border toggle
@@ -136,7 +139,9 @@ bindsym $mod+Shift+exclam move workspace I
 bindsym $mod+Shift+at move workspace II
 bindsym $mod+Shift+numbersign move workspace III
 bindsym $mod+Shift+dollar move workspace IV
-bindsym $mod+Shift+percent move workspace V bindsym $mod+Shift+asciicircum move workspace VI bindsym $mod+Shift+ampersand move workspace VII
+bindsym $mod+Shift+percent move workspace V 
+bindsym $mod+Shift+asciicircum move workspace VI 
+bindsym $mod+Shift+ampersand move workspace VII
 bindsym $mod+Shift+asterisk move workspace VIII
 bindsym $mod+Shift+parenleft move workspace IX
 bindsym $mod+Shift+parenright move workspace X
@@ -161,6 +166,7 @@ assign [Class="Xepher"] DEV
 
 #Always open floating
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Skype"] floating enable
 
 # reload, restart, exit
 bindsym $mod+Shift+C reload
@@ -169,14 +175,15 @@ bindsym $mod+Shift+E exit
 
 # resize windows
 mode "resize" {
-    bindsym Shift+H resize shrink width  1px or 1 ppt
-    bindsym Shift+J resize shrink height 1px or 1 ppt
-    bindsym Shift+K resize grow   height 1px or 1 ppt
-    bindsym Shift+L resize grow   width  1px or 1 ppt
-    bindsym Shift+Left resize shrink width  1px or 10 ppt
-    bindsym Shift+Down resize shrink height 1px or 10 ppt
-    bindsym Shift+Up resize grow   height 1px or 1 ppt
-    bindsym Shift+Right resize grow   width  1px or 1 ppt
+    bindsym Shift+H     resize shrink width  5px or 5 ppt
+    bindsym Shift+J     resize shrink height 5px or 5 ppt
+    bindsym Shift+K     resize grow   height 5px or 5 ppt
+    bindsym Shift+L     resize grow   width  5px or 5 ppt
+
+    bindsym Shift+Left  resize shrink width  5px or 5 ppt
+    bindsym Shift+Down  resize shrink height 5px or 5 ppt
+    bindsym Shift+Up    resize grow   height 5px or 5 ppt
+    bindsym Shift+Right resize grow   width  5px or 5 ppt
 
     # exit resize mode
     bindsym Escape mode "default"
@@ -186,7 +193,7 @@ mode "resize" {
 # toggle resize
 bindsym $mod+r mode "resize"
 
-floating_minimum_size 500 x 100
+floating_minimum_size 250 x 50
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -214,7 +221,8 @@ exec --no-startup-id ~/./alternating_layouts.py
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-sound-applet
 exec --no-startup-id mpd
-exec --no-startup-id compton
+exec-always --no-startup-id pkill compton
+exec-always --no-startup-id compton
 exec --no-startup-id google-chrome
 exec --no-startup-id ~/./.reread.sh
 exec --no-startup-id mpdscribble
