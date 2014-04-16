@@ -1,18 +1,18 @@
 XTerm*locale: true
 *saveLines: 4096
-*foreground: #dedede
-XTerm*background: #2d2d2d
+*foreground: #aaaaaa
+XTerm*background: #dedede
 
-!*fading: 0
+*fading: 5
 
-*cursorColor: #dedede
-*pointerColorForeground: #2d2d2d
-*pointerColorBackground: #dedede
+*cursorColor: #aaaaaa
+*pointerColorForeground: #dedede
+*pointerColorBackground: #aaaaaa
 
 *internalBorder: 10
 
 !black
-*color0: #2d2d2d
+*color0: #dedede
 *color8: #aaaaaa
 
 !red
@@ -28,8 +28,8 @@ XTerm*background: #2d2d2d
 *color11: #aaaaaa
 
 !blue
-*color4:  #78b5fe
-*color12: #e5a29f
+*color4:  #5895be
+*color12: #82b56f
 
 !magenta
 *color5:  #a897cc
@@ -45,13 +45,13 @@ XTerm*background: #2d2d2d
 
 !extra
 *colorUL: #aaaaaa
-*colorBD: #f9f9f9
+*colorBD: #aaaaaa
 
 XTerm*borderWidth: 0
 *boldMode: false
 
 URxvt*depth: 32
-URxvt*background: [100]#2d2d2d
+URxvt*background: [0]#dedede
 
 URxvt*font: xft:Terminus:size=8
 URxvt*urlLauncher: google-chrome

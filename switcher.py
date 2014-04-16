@@ -17,9 +17,7 @@ def find_and_replace_hex(document,values,iterator):
                 begin = document[i][:index]
                 rec_doc = [document[i][index+7:]]
                 temp = begin + values[iterator]
-                print(document[i])
                 result = find_and_replace_hex(rec_doc,values,iterator+1)
-                print(document[i])
                 document[i] = temp + str(result[0][0])
                 iterator = result[1]
     return([document,iterator])
@@ -29,7 +27,7 @@ class ColorsObj(object):
         #creates list of colors to choose from
         colors = ["#2d2d2d","#dedede","#f9f9f9","#aaaaaa",
                   "#d64937","#cf7c73","#c6301c","#4c884e",
-                  "#777777","#e5a29f","#78b5fe","#b57cdd",
+                  "#777777","#82b56f","#5895be","#b57cdd",
                   "#a897cc","#a0b0de","#9cabdd","#c7c7c7",
                   "#cccccc","#333333","#999999","#577382",
                   "#929eb0","#a6a6a6","#000000","#00ff00",
@@ -40,6 +38,7 @@ class ColorsObj(object):
         i3Matrix = [23,23,22,23,23,23,22,23,23,23,22,23,23,23,22,23,22,23,22,23,22,23,23,22,23,23,22,23,23,22,23]
         i3Hacker = [24,24,22,24,24,24,22,24,24,24,22,24,24,24,22,24,22,24,22,24,22,24,24,22,24,24,22,24,24,22,24]
         
+        termTrans = [ 3, 1, 3, 1, 3, 1, 3, 5, 6, 7, 4,18, 3,10, 9,12,11,14,13,16,15, 3, 3, 1]
         termLight =  [ 0, 1, 0, 1, 0, 1, 3, 5, 6, 7, 4,18, 3,10, 9,12,11,14,13,16,15, 3, 0, 1]
         termDark =   [ 1, 0, 1, 0, 1, 0, 3, 5, 6, 7, 4,18, 3,10, 9,12,11,14,13,16,15, 3, 2, 0]
         termMatrix = [23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22]
@@ -56,7 +55,9 @@ class ColorsObj(object):
         self.tscheme = []
         self.tempi = []
         self.tempt = []
-        
+        self.border = 2
+        self.fading = 0
+
         if choose[0].lower() == 'l':
             self.trans = "100"
             self.bg = lightbg
@@ -77,13 +78,38 @@ class ColorsObj(object):
             self.bg = darkbg
             self.tempi = i3Dark
             self.tempt = termDark
-        
+        elif choose[0].lower() == 't':
+            c2 = input("Light or Dark?\n")
+            if c2[0].lower() == 'l':
+                self.trans = "0"
+                self.bg = lightbg
+                self.tempi = i3Light
+                self.tempt = termTrans
+                self.border = 0
+                self.fading = 5
+            else:
+                self.trans = "0"
+                self.bg = darkbg
+                self.tempi = i3Dark
+                self.tempt = termTrans
+                self.border = 0
+                self.fading = 5
+
+            
         for i in range(len(self.tempi)):
             self.ischeme.append(colors[self.tempi[i]])
         for i in range(len(self.tempt)):
             self.tscheme.append(colors[self.tempt[i]])
 
-decide = input('What theme would you like to use?\n\nOptions:\n>Light Numix\n>Dark Numix\n>Hacker\n>Matrix\n\n')
+decide = input('What theme would you like to use?\n\
+\n\
+Options:\n\
+>Light Numix\n\
+>Dark Numix\n\
+>Hacker\n\
+>Matrix\n\
+>Transparent\n\
+\n')
 
 fi3 = open('.i3/config','r')
 fterm = open('.Xresources','r')
@@ -103,14 +129,30 @@ i3 = find_and_replace_hex(i3,colors.ischeme,0)[0]
 
 term = find_and_replace_hex(term,colors.tscheme,0)[0]
 
+for i in range(len(i3)):
+    if i3[i].find('pixel') != -1:
+        i3[i] = i3[i].split(' ')
+        for j in range(len(i3[i])):
+            if i3[i][j] != "new_window" and i3[i][j] != "pixel" and i3[i][j] != "\n" and i3[i][j] != "Window" and i3[i][j] != "#" and i3[i][j] != "" and i3[i][j] != "pixels" and i3[i][j] != "new_float":
+                i3[i][j] = str(colors.border)
+        if type(i3[i]) != "string":
+            i3[i] = ' '.join(i3[i])+'\n'
+
+for i in range(len(term)):
+    if term[i].find('fading') != -1:
+        term[i] = term[i].split(' ')
+        for j in range(len(term[i])):
+            if term[i][j] != "*fading:" and term[i][j] != "\n":
+                term[i][j] = str(colors.fading)
+        if type(term[i]) != "string":
+            term[i] = ' '.join(term[i])+'\n'
+
 for i in range(len(term)):
     if term[i].find(']#') != -1:
         term[i] = term[i][:term[i].find('[')]+'['+colors.trans+term[i][term[i].find(']'):]
 
 for j in range(len(reread)):
-    print(reread[j])
     if reread[j].find('gsettings') != -1:
-        print('gsettings found')
         reread[j] = 'gsettings set org.gnome.desktop.background picture-uri "file:///'+colors.bg+'"\n'
 
 fi3 = open('.i3/config','w')

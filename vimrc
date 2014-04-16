@@ -21,6 +21,12 @@ set mouse=a
 
 highlight LineNr ctermfg=11
 highlight Statement term=bold ctermfg=10
+highlight Special term=bold ctermfg=6
+highlight PreProc term=underline ctermfg=6
+highlight Type term=underline ctermfg=4
+highlight Directory term=bold ctermfg=12
+highlight WarningMsg term=standout ctermfg=13
+highlight Title term=bold ctermfg=13
 
 let vala_comment_strings = 1
 let vala_space_errors = 1

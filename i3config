@@ -82,7 +82,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 # bindcode $mod+d focus child
@@ -93,10 +93,10 @@ client.focused_inactive #2d2d2d #444444 #dedede #2d2d2d
 client.unfocused        #2d2d2d #444444 #dedede #2d2d2d
 client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
-# Window pixels
-new_window pixel 2
+# Window 2
+new_window pixel 0
 new_window inset 20
-new_float  pixel 2
+new_float  pixel 0
 
 # border
 hide_edge_borders none
@@ -120,6 +120,7 @@ workspace "WWW" output xinerama-0
 workspace "DEV" output xinerama-0
 workspace "REC" output xinerama-0
 workspace "SKYPE" output xinerama-0
+workspace "GIMP" output xinerama-0
 
 # switch to workspace
 bindsym $mod+1 workspace I
@@ -136,6 +137,7 @@ bindsym $mod+i workspace WWW
 bindsym $mod+o workspace DEV
 bindsym $mod+u workspace REC
 bindsym $mod+s workspace SKYPE
+bindsym $mod+a workspace GIMP
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace I
 bindsym $mod+Shift+at move workspace II
@@ -151,9 +153,11 @@ bindsym $mod+Shift+I move workspace WWW
 bindsym $mod+Shift+O move workspace DEV
 bindsym $mod+Shift+U move workspace REC
 bindsym $mod+Shift+S move workspace SKYPE
+bindsym $mod+Shift+A move workspace GIMP
 
 #Assign workspaces to screens
 workspace WWW output LVDS1
+workspace GIMP output LVDS1
 workspace REC output VGA1
 workspace SKYPE output VGA1
 
@@ -165,10 +169,12 @@ assign [class="Chromium-browser"] WWW
 assign [class="Komodo edit"] DEV
 assign [class="Noise"] REC
 assign [class="Skype"] SKYPE
+assign [class="Gimp"] GIMP
 
-#Always open floating
+#floating
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Switchboard"] floating enable
+for_window [class="Gimp"] floating disable
 
 # reload, restart, exit
 bindsym $mod+Shift+C reload
