@@ -1,18 +1,18 @@
 XTerm*locale: true
 *saveLines: 4096
-*foreground: #aaaaaa
-XTerm*background: #dedede
+*foreground: #dedede
+XTerm*background: #2d2d2d
 
-*fading: 5
+*fading: 0
 
-*cursorColor: #aaaaaa
-*pointerColorForeground: #dedede
-*pointerColorBackground: #aaaaaa
+*cursorColor: #dedede
+*pointerColorForeground: #2d2d2d
+*pointerColorBackground: #dedede
 
 *internalBorder: 10
 
 !black
-*color0: #dedede
+*color0: #2d2d2d
 *color8: #aaaaaa
 
 !red
@@ -45,13 +45,13 @@ XTerm*background: #dedede
 
 !extra
 *colorUL: #aaaaaa
-*colorBD: #aaaaaa
+*colorBD: #f9f9f9
 
 XTerm*borderWidth: 0
 *boldMode: false
 
 URxvt*depth: 32
-URxvt*background: [0]#dedede
+URxvt*background: [100]#2d2d2d
 
 URxvt*font: xft:Terminus:size=8
 URxvt*urlLauncher: google-chrome

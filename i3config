@@ -94,9 +94,9 @@ client.unfocused        #2d2d2d #444444 #dedede #2d2d2d
 client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window 2
-new_window pixel 0
+new_window pixel 2
 new_window inset 20
-new_float  pixel 0
+new_float  pixel 2
 
 # border
 hide_edge_borders none
