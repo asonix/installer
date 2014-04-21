@@ -90,13 +90,13 @@ bindsym $mod+space focus mode_toggle
 
 # class                 border  backgr. text    indicator
 client.focused          #d64937 #d64937 #dedede #d64937
-client.focused_inactive #2d2d2d #444444 #dedede #2d2d2d
-client.unfocused        #2d2d2d #444444 #dedede #2d2d2d
+client.focused_inactive #2d2d2d #555555 #dedede #2d2d2d
+client.unfocused        #2d2d2d #555555 #dedede #2d2d2d
 client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window 2
 new_window pixel 2
-new_window inset 20
+new_window inset 25
 new_float  pixel 2
 
 # border
