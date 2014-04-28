@@ -265,7 +265,7 @@ playlist_separate_albums = "yes"
 ## Note: You can specify third character which will
 ## be used to build 'empty' part of progressbar.
 ##
-progressbar_look = "&#9472;&#9596;&#9472"
+progressbar_look = "─╼"
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
@@ -432,11 +432,11 @@ main_window_color = "white"
 #
 #color2 = "green"
 #
-main_window_highlight_color = "green"
+#main_window_highlight_color = "green"
 #
-progressbar_color = "green"
+#progressbar_color = "green"
 #
-statusbar_color = "green"
+#statusbar_color = "green"
 #
 #alternative_ui_separator_color = "black"
 #

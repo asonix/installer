@@ -152,7 +152,7 @@ for i in range(len(term)):
         term[i] = term[i][:term[i].find('[')]+'['+colors.trans+term[i][term[i].find(']'):]
 
 for j in range(len(reread)):
-    if reread[j].find('gsettings') != -1:
+    if reread[j].find('picture-uri') != -1:
         reread[j] = 'gsettings set org.gnome.desktop.background picture-uri "file:///'+colors.bg+'"\n'
 
 fi3 = open('.i3/config','w')
