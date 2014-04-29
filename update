@@ -15,6 +15,7 @@ cp .update Downloads/elementaryinstaller/update
 cp xswitcher.py Downloads/elementaryinstaller/xswitcher.py
 cp resizeL.py Downloads/elementaryinstaller/resizeL.py
 cp resizeS.py Downloads/elementaryinstaller/resizeS.py
+cp .reread.sh Downloads/elementaryinstaller/reread.sh
 cp .config/compton.conf Downloads/elementaryinstaller/compton.conf
 
 cd Downloads/elementaryinstaller/
