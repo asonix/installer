@@ -1,13 +1,17 @@
 #!/bin/bash
 
+ORIG=$(pwd)
+
 echo "adding repositories"
 echo ""
 sudo apt-add-repository -y ppa:versable/elementary-update
-sudo apt-add-repository -y ppa:vincent-c/ppa
+sudo apt-add-repository -y ppa:numix/ppa
+sudo apt-add-repository -y ppa:vincent-c/ponysay
 sudo apt-add-repository -y ppa:ingalex/super-boot-manager
 sudo apt-add-repository -y ppa:n-muench/burg
 sudo apt-add-repository -y ppa:richardgv/compton
 sudo apt-add-repository -y ppa:no1wantdthisname/ppa
+sudo echo "deb http://debian.sur5r.net/i3/ raring universe" >> /etc/apt/sources.list
 echo ""
 echo ""
 echo "updating and upgrading"
@@ -31,7 +35,7 @@ sudo apt-get install -y i3
 sudo apt-get install -y git
 sudo apt-get install -y vim-gtk
 
-sudo apt-get install -y elmentary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-saucy ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qtconfig-qt4 gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype blender fontconfig-infinality
+sudo apt-get install -y rxvt-unicode-256color xterm elementary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-trusty ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qt4-qtconfig gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype blender fontconfig-infinality numix-gtk-theme numix-icon-theme-circle numix-plank-theme gftp
 
 wget http://git.silverirc.com/cgit.cgi/screenfetch.git/plain/screenfetch-dev
 sudo chmod +x screenfetch-dev
@@ -73,11 +77,13 @@ cd ..
 git clone https://github.com/DSMan195276/i3.git
 cd i3
 git checkout dsm-changes
-sudo apt-get install -y libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev compton xterm rxvt-unicode rxvt-unicode-256color xfonts-terminus i3bar i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev
+sudo apt-get install -y sur5r-keyring libx11-xcb-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb1-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxrandr-dev libxcb-randr0-dev libev-dev libxcb-xinerama0-dev libxcursor-dev compton xterm rxvt-unicode-256color xfonts-terminus i3status libanyevent-i3-perl libanyevent-perl libcommon-sense-perl libconfuse-common libconfuse0 libjson-xs-perl libxcb-cursor0 libxcb-dpms0 libxcb-image0 libxcb-render-util0 libxkbcommon0 suckless-tools libxcb-cursor-dev libxcb-keysyms1-dev --allow-unauthenticated
 make
 sudo make install
 sudo apt-get remove i3
 cd ..
+
+cd $ORIG
 
 mkdir ~/.i3
 mkdir ~/.mpd
@@ -109,7 +115,9 @@ cp compton.conf ~/.config/compton.conf
 
 sudo apt-get install burg burg-themes super-boot-manager
 sudo burg-install "(hd0)"
-wget http://www.deviantart.com/download/187228213/el_castillo_burg_theme_by_bigrza-d33gy7p.zip?token=9ce33c978f7983f8b54d34fd0867e80abae9713d&ts=1393723777
+
+wget http://www.deviantart.com/download/187228213/el_castillo_burg_theme_by_bigrza-d33gy7p.zip
+
 mkdir burg
 unzip el_castillo_burg_theme_by_bigrza-d33gy7p.zip -d burg
 sudo cp -r burg/El_Castillo /boot/burg/themes/
@@ -118,5 +126,4 @@ sudo update burg
 sudo burg-emu -D
 echo "press t"
 apt-file udpate
-
 sudo bash /etc/fonts/infinality/infctl.sh setstyle
