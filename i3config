@@ -25,7 +25,7 @@ bindsym $mod+g exec google-chrome
 bindsym $mod+n exec urxvt -e ncmpcpp
 bindsym $mod+m exec /home/riley/Komodo-Edit-8/lib/mozilla/komodo
 bindsym $mod+y exec switchboard
-bindsym $mod+Mod1+y exec pantheon-files
+bindsym $mod+Mod1+y exec nemo --no-desktop
 bindsym $mod+Mod1+n exec noise
 bindsym $mod+Mod1+u exec ~/./resizeL.py
 bindsym $mod+Mod1+i exec ~/./resizeS.py
@@ -116,7 +116,7 @@ workspace "VI" output xinerama-0
 workspace "VII" output xinerama-0
 workspace "VIII" output xinerama-0
 workspace "IX" output xinerama-0
-workspace "X" output xinerama-0
+workspace "ODT" output xinerama-0
 workspace "WWW" output xinerama-0
 workspace "DEV" output xinerama-0
 workspace "REC" output xinerama-0
@@ -133,7 +133,7 @@ bindsym $mod+6 workspace VI
 bindsym $mod+7 workspace VII
 bindsym $mod+8 workspace VIII
 bindsym $mod+9 workspace IX
-bindsym $mod+0 workspace X
+bindsym $mod+0 workspace ODT
 bindsym $mod+i workspace WWW
 bindsym $mod+o workspace DEV
 bindsym $mod+u workspace REC
@@ -149,7 +149,7 @@ bindsym $mod+Shift+asciicircum move workspace VI
 bindsym $mod+Shift+ampersand move workspace VII
 bindsym $mod+Shift+asterisk move workspace VIII
 bindsym $mod+Shift+parenleft move workspace IX
-bindsym $mod+Shift+parenright move workspace X
+bindsym $mod+Shift+parenright move workspace ODT
 bindsym $mod+Shift+I move workspace WWW
 bindsym $mod+Shift+O move workspace DEV
 bindsym $mod+Shift+U move workspace REC
@@ -171,6 +171,14 @@ assign [class="Komodo edit"] DEV
 assign [class="Noise"] REC
 assign [class="Skype"] SKYPE
 assign [class="Gimp"] GIMP
+assign [class="Et"] ODT
+assign [class="Wps"] ODT
+assign [class="Wpp"] ODT
+assign [class="Libreoffice-owriter"] ODT
+assign [class="Libreoffice-calc"] ODT
+assign [class="Libreoffice-impress"] ODT
+assign [class="Libreoffice-draw"] ODT
+assign [class="Libreoffice"] ODT
 
 #floating
 for_window [class="Gnome-calculator"] floating enable

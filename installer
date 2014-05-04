@@ -11,6 +11,8 @@ sudo apt-add-repository -y ppa:ingalex/super-boot-manager
 sudo apt-add-repository -y ppa:n-muench/burg
 sudo apt-add-repository -y ppa:richardgv/compton
 sudo apt-add-repository -y ppa:no1wantdthisname/ppa
+sudo apt-add-repository -y ppa:langdalepl/gvfs-mtp
+sudo apt-add-repository -y ppa:webupd8team/nemo
 sudo echo "deb http://debian.sur5r.net/i3/ raring universe" >> /etc/apt/sources.list
 echo ""
 echo ""
@@ -35,7 +37,7 @@ sudo apt-get install -y i3
 sudo apt-get install -y git
 sudo apt-get install -y vim-gtk
 
-sudo apt-get install -y rxvt-unicode-256color xterm elementary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-trusty ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qt4-qtconfig gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype blender fontconfig-infinality numix-gtk-theme numix-icon-theme-circle numix-plank-theme gftp eclipse parted
+sudo apt-get install -y rxvt-unicode-256color xterm elementary-tweaks indicator-synapse etube gazette nuvolaplayer elementary-lion-theme elementary-champagne-theme elementary-blue-theme elementary-thirdparty-icons elementary-plank-themes elementary-wallpaper-collection linux-generic-lts-trusty ncmpcpp mpd mpdscribble gimp libreoffice mpc apt-file dmenu ponysay gconf-editor unetbootin dconf-tools gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad qt4-qtconfig gparted smbfs zip unzip tmux mtr slurm ttyrec htop iotop iftop iptraf nethogs ack calcurse remind wyrd newsbeuter rsstail tig qalc finch pidgin-data pidgin-skype blender fontconfig-infinality numix-gtk-theme numix-icon-theme-circle numix-plank-theme gftp eclipse parted nemo
 
 wget http://git.silverirc.com/cgit.cgi/screenfetch.git/plain/screenfetch-dev
 sudo chmod +x screenfetch-dev

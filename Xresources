@@ -50,8 +50,8 @@ XTerm*background: #2d2d2d
 XTerm*borderWidth: 0
 *boldMode: false
 
-URxvt*depth: 32
-URxvt*background: [100]#2d2d2d
+!//#URxvt*depth: 32
+URxvt*background: #2d2d2d
 
 URxvt*font: xft:Droid Sans Mono:size=8
 URxvt*letterSpace: -1
