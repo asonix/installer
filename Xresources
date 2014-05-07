@@ -1,18 +1,18 @@
 XTerm*locale: true
 *saveLines: 4096
-*foreground: #dedede
-XTerm*background: #2d2d2d
+*foreground: #f9f9f9
+XTerm*background: #dedede
 
 *fading: 0
 
-*cursorColor: #dedede
-*pointerColorForeground: #2d2d2d
-*pointerColorBackground: #dedede
+*cursorColor: #f9f9f9
+*pointerColorForeground: #dedede
+*pointerColorBackground: #f9f9f9
 
 *internalBorder: 10
 
 !black
-*color0: #2d2d2d
+*color0: #dedede
 *color8: #aaaaaa
 
 !red
@@ -45,13 +45,13 @@ XTerm*background: #2d2d2d
 
 !extra
 *colorUL: #aaaaaa
-*colorBD: #f9f9f9
+*colorBD: #aaaaaa
 
 XTerm*borderWidth: 0
 *boldMode: false
 
 !//#URxvt*depth: 32
-URxvt*background: #2d2d2d
+URxvt*background: #dedede
 
 URxvt*font: xft:Droid Sans Mono:size=8
 URxvt*letterSpace: -1

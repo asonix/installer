@@ -10,7 +10,7 @@ font pango: Droid Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec ./altTheme.py && urxvt
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -96,7 +96,7 @@ client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window 2
 new_window pixel 2
-new_window inset 10
+new_window inset 0
 new_float  pixel 2
 
 # border
@@ -174,11 +174,11 @@ assign [class="Gimp"] GIMP
 assign [class="Et"] ODT
 assign [class="Wps"] ODT
 assign [class="Wpp"] ODT
-assign [class="Libreoffice-owriter"] ODT
-assign [class="Libreoffice-calc"] ODT
-assign [class="Libreoffice-impress"] ODT
-assign [class="Libreoffice-draw"] ODT
-assign [class="Libreoffice"] ODT
+assign [class="libreoffice-writer"] ODT
+assign [class="libreoffice-calc"] ODT
+assign [class="libreoffice-impress"] ODT
+assign [class="libreoffice-draw"] ODT
+assign [class="libreoffice-startcenter"] ODT
 
 #floating
 for_window [class="Gnome-calculator"] floating enable
@@ -237,12 +237,11 @@ bar {
 exec --no-startup-id ~/./alternating_layouts.py
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-sound-applet
-exec --no-startup-id pkill mpd
-exec --no-startup-id mpd
 exec --no-startup-id compton
 exec --no-startup-id google-chrome
+exec --no-startup-id mpd
 exec --no-startup-id mpdscribble
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,gpg,secrets
-exec --no-startup-id ~/./.reread.sh
+exec --no-startup-id sleep 1 && ~/./.reread.sh

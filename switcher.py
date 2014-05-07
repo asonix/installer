@@ -55,6 +55,7 @@ class WmObj(object):
                         "/home/riley/Pictures/wallpapers/rainbow.jpg",
                         "/home/riley/Pictures/wallpapers/phoenix.jpg",
                         "/home/riley/Pictures/wallpapers/moonhorse.jpg",
+                        "/home/riley/Pictures/wallpapers/frogadier.png",
                         "/home/riley/Pictures/wallpapers/black.png"]
 
         bgnum = int(input("What background would you like (1/2/3/4...)?\n\
@@ -75,7 +76,8 @@ class WmObj(object):
  15. Rainbow\n\
  16. Phoenix\n\
  17. Luna\n\
- 18. Black\n\
+ 18. Frogadier\n\
+ 19. Black\n\
  \n"))
         if (bgnum <= len(backgrounds)):
             self.bg = backgrounds[bgnum-1]
@@ -104,9 +106,9 @@ class TermObj(object):
         termDark =   [ 1, 0, 1, 0, 1, 0, 3, 5, 6, 7, 4,18, 3,10, 9,12,11,14,13,16,15, 3, 2, 0]
         termMatrix = [23,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,22]
         termHacker = [24,22,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,22]
-        
+
+        self.alternating = "bindsym $mod+Return exec urxvt\n"
         self.trans = ""
-        
         self.tscheme = []
         self.tempt = []
         self.fading = 0
@@ -127,6 +129,11 @@ class TermObj(object):
             self.trans = "0"
             self.tempt = termTrans
             self.fading = 5
+        elif choose[0].lower() == 'a':
+            self.trans = "0"
+            self.tempt = termTrans
+            self.fading = 0
+            self.alternating = "bindsym $mod+Return exec ./altTheme.py && urxvt\n"
         
         for i in range(len(self.tempt)):
             self.tscheme.append(colors[self.tempt[i]])
@@ -146,6 +153,7 @@ termdecide = input('What terminal theme would you like to use?\n\
 Options:\n\
 >Light Numix\n\
 >Dark Numix\n\
+>Alternating Numix\n\
 >Hacker\n\
 >Matrix\n\
 >Transparent\n\
@@ -166,6 +174,10 @@ freread.close()
 
 i3 = find_and_replace_hex(i3,i3colors.ischeme,0)[0]
 term = find_and_replace_hex(term,termcolors.tscheme,0)[0]
+
+for i in range(len(i3)):
+    if i3[i].find('$mod+Return') != -1:
+        i3[i] = termcolors.alternating
 
 for i in range(len(term)):
     if term[i].find('fading') != -1:
