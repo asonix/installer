@@ -29,7 +29,7 @@ bindsym $mod+Mod1+y exec nemo --no-desktop
 bindsym $mod+Mod1+n exec noise
 bindsym $mod+Mod1+u exec ~/./resizeL.py
 bindsym $mod+Mod1+i exec ~/./resizeS.py
-
+bindsym $mod+Mod1+m exec urxvt -e sudo mount -t ntfs-3g -o remove_hiberfile /dev/sda2 /media/windows
 
 # ncmpcpp controls
 bindsym $mod+Mod1+h exec ncmpcpp prev
@@ -95,9 +95,9 @@ client.unfocused        #2d2d2d #555555 #dedede #2d2d2d
 client.urgent           #d64937 #2d2d2d #2d2d2d #2d2d2d
 
 # Window 2
-new_window pixel 2
+new_window pixel 1
 new_window inset 0
-new_float  pixel 2
+new_float  pixel 1
 
 # border
 hide_edge_borders none
@@ -184,6 +184,7 @@ assign [class="libreoffice-startcenter"] ODT
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Switchboard"] floating enable
 for_window [class="Gimp"] floating disable
+for_window [class="Simplescreenrecorder"] floating enable
 
 # reload, restart, exit
 bindsym $mod+Shift+C reload

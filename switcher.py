@@ -4,7 +4,7 @@ from subprocess import call
 #creates list of colors to choose from
 colors = ["#2d2d2d","#dedede","#f9f9f9","#aaaaaa",
           "#d64937","#c09853","#b94a48","#f9f9f9",
-          "#777777","#859d00","#3a87ad","#b57cdd",
+          "#777777","#859d00","#3a87ad","#ad3ac8",
           "#a897cc","#a0b0de","#268bd2","#c7c7c7",
           "#cccccc","#333333","#f57900","#577382",
           "#929eb0","#a6a6a6","#000000","#00ff00",

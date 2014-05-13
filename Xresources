@@ -1,13 +1,13 @@
 XTerm*locale: true
 *saveLines: 4096
-*foreground: #f9f9f9
-XTerm*background: #dedede
+*foreground: #2d2d2d
+XTerm*background: #e5e5e5
 
 *fading: 0
 
-*cursorColor: #f9f9f9
+*cursorColor: #2d2d2d
 *pointerColorForeground: #dedede
-*pointerColorBackground: #f9f9f9
+*pointerColorBackground: #2d2d2d
 
 *internalBorder: 10
 
@@ -45,13 +45,13 @@ XTerm*background: #dedede
 
 !extra
 *colorUL: #aaaaaa
-*colorBD: #aaaaaa
+*colorBD: #2d2d2d
 
 XTerm*borderWidth: 0
 *boldMode: false
 
 !//#URxvt*depth: 32
-URxvt*background: #dedede
+URxvt*background: #e5e5e5
 
 URxvt*font: xft:Droid Sans Mono:size=8
 URxvt*letterSpace: -1
