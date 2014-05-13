@@ -1,18 +1,18 @@
 XTerm*locale: true
 *saveLines: 4096
-*foreground: #2d2d2d
-XTerm*background: #e5e5e5
+*foreground: #dedede
+XTerm*background: #2d2d2d
 
 *fading: 0
 
-*cursorColor: #2d2d2d
-*pointerColorForeground: #dedede
-*pointerColorBackground: #2d2d2d
+*cursorColor: #dedede
+*pointerColorForeground: #2d2d2d
+*pointerColorBackground: #dedede
 
 *internalBorder: 10
 
 !black
-*color0: #dedede
+*color0: #2d2d2d
 *color8: #aaaaaa
 
 !red
@@ -33,7 +33,7 @@ XTerm*background: #e5e5e5
 
 !magenta
 *color5:  #a897cc
-*color13: #b57cdd
+*color13: #ad3ac8
 
 !cyan
 *color6:  #268bd2
@@ -45,13 +45,13 @@ XTerm*background: #e5e5e5
 
 !extra
 *colorUL: #aaaaaa
-*colorBD: #2d2d2d
+*colorBD: #f9f9f9
 
 XTerm*borderWidth: 0
 *boldMode: false
 
 !//#URxvt*depth: 32
-URxvt*background: #e5e5e5
+URxvt*background: #2d2d2d
 
 URxvt*font: xft:Droid Sans Mono:size=8
 URxvt*letterSpace: -1
